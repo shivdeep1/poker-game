@@ -30,14 +30,14 @@ def card_ranks(hand):
     ranks.sort(reverse=True)
     return ranks
 
-def card_suits(hand):
+def card_suits(hand):           #identify card suit.
     return [s for r,s in hand]
 
 def poker(hands):
     return max(hands , key=hand_rank)
 
 def hand_rank(hand):
-    ranks = card_ranks(hand)
+    ranks = card_ranks(hand)                                #high rank card
     suits = card_suits(hand)
 
     if straight(ranks) and flush(suits):
